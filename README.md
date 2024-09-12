@@ -45,4 +45,5 @@ python setup.py develop
 
 ## Acknowledgements
 
-This code is built on  [DAT](https://github.com/zhengchen1999/DAT.git).
+This code is built on  [DAT](https://github.com/zhengchen1999/DAT.git) and [Contourlet-CNN
+](https://github.com/xKHUNx/Contourlet-CNN).
