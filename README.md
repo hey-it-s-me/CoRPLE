@@ -11,3 +11,18 @@ Download our datasets of infrared image super-resolution with detection labels. 
   
 Download our datasets of infrared image super-resolution with segmentation labels. Original images are provided by [SegMiF](https://drive.google.com/drive/folders/1T_jVi80tjgyHTQDpn-TjfySyW4CK1LlF?usp=sharing).
 - [Google Drive](https://drive.google.com/file/d/1M8bKv8Z6CuOOR7g7hBYo36EToVkEy0Ly/view?usp=sharing)
+
+## Dependencies
+
+- Python 3.8
+- PyTorch 1.8.0
+- NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
+
+```bash
+# Clone the github repo and go to the default directory 'CoRPLE'.
+git clone 
+conda create -n CoRPLE python=3.8
+conda activate CoRPLE
+pip install -r requirements.txt
+python setup.py develop
+```
