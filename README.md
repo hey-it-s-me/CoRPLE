@@ -36,6 +36,6 @@ python setup.py develop
 ## Testing
 - Run the following scripts. The testing configuration is in `options/test/`.
   ```shell
-  python basicsr/train.py -opt options/Test/test_CoRPLE_light_x2.yml
-  python basicsr/train.py -opt options/Test/test_CoRPLE_light_x4.yml
+  python basicsr/train.py -opt options/Test/my_test_CoRPLE_light_x2.yml
+  python basicsr/train.py -opt options/Test/my_test_CoRPLE_light_x4.yml
   ```
