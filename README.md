@@ -20,9 +20,15 @@ Download our datasets of infrared image super-resolution with segmentation label
 
 ```bash
 # Clone the github repo and go to the default directory 'CoRPLE'.
-git clone 
+git clone https://github.com/hey-it-s-me/CoRPLE.git
 conda create -n CoRPLE python=3.8
 conda activate CoRPLE
 pip install -r requirements.txt
 python setup.py develop
 ```
+
+## Training
+- Run the following scripts. The training configuration is in `options/train/`.
+  ```shell
+  python basicsr/train.py -opt options/Train/train_CoRPLE_light_x4.yml
+  ```
