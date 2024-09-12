@@ -33,9 +33,16 @@ python setup.py develop
   python basicsr/train.py -opt options/Train/train_CoRPLE_light_x2.yml
   python basicsr/train.py -opt options/Train/train_CoRPLE_light_x4.yml
   ```
+- The training experiment is in `experiments/`.
+  
 ## Testing
 - Run the following scripts. The testing configuration is in `options/test/`.
   ```shell
   python basicsr/train.py -opt options/Test/my_test_CoRPLE_light_x2.yml
   python basicsr/train.py -opt options/Test/my_test_CoRPLE_light_x4.yml
   ```
+- The output is in `results/`.
+
+## Acknowledgements
+
+This code is built on  [DAT](https://github.com/zhengchen1999/DAT.git).
