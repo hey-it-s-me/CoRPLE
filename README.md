@@ -30,5 +30,12 @@ python setup.py develop
 ## Training
 - Run the following scripts. The training configuration is in `options/train/`.
   ```shell
+  python basicsr/train.py -opt options/Train/train_CoRPLE_light_x2.yml
   python basicsr/train.py -opt options/Train/train_CoRPLE_light_x4.yml
+  ```
+## Testing
+- Run the following scripts. The testing configuration is in `options/test/`.
+  ```shell
+  python basicsr/train.py -opt options/Test/test_CoRPLE_light_x2.yml
+  python basicsr/train.py -opt options/Test/test_CoRPLE_light_x4.yml
   ```
