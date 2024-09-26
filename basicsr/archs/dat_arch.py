@@ -18,7 +18,6 @@ from PIL import Image
 import torch
 import torch.optim
 from torchvision import datasets, transforms
-from basicsr.archs.contourlet_cnn import ContourletCNN
 from basicsr.archs.pycontourlet.pycontourlet4d.pycontourlet import batch_multi_channel_pdfbdec
 from torchvision.transforms.functional import to_grayscale
 
