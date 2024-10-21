@@ -4,6 +4,7 @@ This repo is the official implementation of,
 Xingyuan Li, Jinyuan Liu*, Zhixin Chen, Yang Zou, Long Ma, Xin Fan, Risheng Liu, European Conference on Computer Vision __(ECCV)__, 2024.
 
 [[pretrained models](https://drive.google.com/drive/folders/1lhk2MQX6JLE_t-QkJQ7aSZP_OvV4oP4k?usp=sharing)]
+[[paper link](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/00391.pdf)]
 
 ## 🤖 Download
 Download our datasets of infrared image super-resolution with detection labels. Original images are provided by [TarDAL](https://drive.google.com/drive/folders/1H-oO7bgRuVFYDcMGvxstT1nmy0WF_Y_6?usp=sharing).
