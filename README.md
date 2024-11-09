@@ -48,3 +48,17 @@ python setup.py develop
 
 This code is built on  [DAT](https://github.com/zhengchen1999/DAT.git) and [Contourlet-CNN
 ](https://github.com/xKHUNx/Contourlet-CNN).
+
+## Citation
+
+If this work has been helpful to you, please feel free to cite our paper!
+
+```
+@inproceedings{licorple,
+  author={Li, Xingyuan and Liu, Jinyuan and Chen, Zhixin and Zou, Yang and Ma, Long and Fan, Xin and Liu, Risheng},
+  title={Contourlet Residual for Prompt Learning Enhanced Infrared Image Super-Resolution},
+  booktitle="Proceedings of the European conference on computer vision",
+  year="2024",
+  pages="270--288"
+}
+```
