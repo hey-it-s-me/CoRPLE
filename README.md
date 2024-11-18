@@ -57,7 +57,7 @@ If this work has been helpful to you, please feel free to cite our paper!
 @inproceedings{licorple,
   author={Li, Xingyuan and Liu, Jinyuan and Chen, Zhixin and Zou, Yang and Ma, Long and Fan, Xin and Liu, Risheng},
   title={Contourlet Residual for Prompt Learning Enhanced Infrared Image Super-Resolution},
-  booktitle="Proceedings of the European conference on computer vision",
+  booktitle="Proceedings of the European Conference on Computer Vision",
   year="2024",
   pages="270--288"
 }
