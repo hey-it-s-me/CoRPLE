@@ -54,11 +54,12 @@ This code is built on  [DAT](https://github.com/zhengchen1999/DAT.git) and [Cont
 If this work has been helpful to you, please feel free to cite our paper!
 
 ```
-@inproceedings{licorple,
-  author={Li, Xingyuan and Liu, Jinyuan and Chen, Zhixin and Zou, Yang and Ma, Long and Fan, Xin and Liu, Risheng},
+@inproceedings{li2024contourlet,
   title={Contourlet Residual for Prompt Learning Enhanced Infrared Image Super-Resolution},
-  booktitle="Proceedings of the European Conference on Computer Vision",
-  year="2024",
-  pages="270--288"
+  author={Li, Xingyuan and Liu, Jinyuan and Chen, Zhixin and Zou, Yang and Ma, Long and Fan, Xin and Liu, Risheng},
+  booktitle={European Conference on Computer Vision},
+  pages={270--288},
+  year={2024}
+}
 }
 ```
