@@ -55,11 +55,11 @@ If this work has been helpful to you, please feel free to cite our paper!
 
 ```
 @inproceedings{li2024contourlet,
-  title={Contourlet Residual for Prompt Learning Enhanced Infrared Image Super-Resolution},
+  title={Contourlet residual for prompt learning enhanced infrared image super-resolution},
   author={Li, Xingyuan and Liu, Jinyuan and Chen, Zhixin and Zou, Yang and Ma, Long and Fan, Xin and Liu, Risheng},
   booktitle={European Conference on Computer Vision},
   pages={270--288},
-  year={2024}
-}
+  year={2024},
+  organization={Springer}
 }
 ```
