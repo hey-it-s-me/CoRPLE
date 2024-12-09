@@ -20,7 +20,7 @@ Download our datasets of infrared image super-resolution with segmentation label
 - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
 
 ```bash
-# Clone the github repo and go to the default directory 'CoRPLE'.
+# Clone the github repo and go to the CRG directory 'CRG'.
 git clone https://github.com/hey-it-s-me/CRG.git
 conda create -n CRG python=3.8
 conda activate CRG
