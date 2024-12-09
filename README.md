@@ -1,10 +1,10 @@
-# Contourlet Residual for Prompt Learning Enhanced Infrared Image Super-Resolution (CoRPLE) 
-This repo is the official implementation of,
-**“Contourlet Residual for Prompt Learning Enhanced Infrared Image Super-Resolution”**, 
-Xingyuan Li, Jinyuan Liu*, Zhixin Chen, Yang Zou, Long Ma, Xin Fan, Risheng Liu, European Conference on Computer Vision __(ECCV)__, 2024.
+# Contourlet Refinement Gate Framework 
+This repo is the implementation of,
+**“Contourlet Refinement Gate Framework for Thermal Spectrum Distribution Regularized Infrared Image Super-Resolution”**, 
+Yang Zou, Zhixin Chen, Zhipeng Zhang, Xingyuan Li, Long Ma, Jinyuan Liu, Peng Wang, Yanning Zhang.
 
 [[pretrained models](https://drive.google.com/drive/folders/1lhk2MQX6JLE_t-QkJQ7aSZP_OvV4oP4k?usp=sharing)]
-[[paper link](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/00391.pdf)]
+[[arXiv link](https://arxiv.org/pdf/2411.12530)]
 
 ## 🤖 Download
 Download our datasets of infrared image super-resolution with detection labels. Original images are provided by [TarDAL](https://drive.google.com/drive/folders/1H-oO7bgRuVFYDcMGvxstT1nmy0WF_Y_6?usp=sharing).
@@ -21,9 +21,9 @@ Download our datasets of infrared image super-resolution with segmentation label
 
 ```bash
 # Clone the github repo and go to the default directory 'CoRPLE'.
-git clone https://github.com/hey-it-s-me/CoRPLE.git
-conda create -n CoRPLE python=3.8
-conda activate CoRPLE
+git clone https://github.com/hey-it-s-me/CRG.git
+conda create -n CRG python=3.8
+conda activate CRG
 pip install -r requirements.txt
 python setup.py develop
 ```
@@ -31,35 +31,33 @@ python setup.py develop
 ## Training
 - Run the following scripts. The training configuration is in `options/train/`.
   ```shell
-  python basicsr/train.py -opt options/Train/train_CoRPLE_light_x2.yml
-  python basicsr/train.py -opt options/Train/train_CoRPLE_light_x4.yml
+  python basicsr/train.py -opt options/Train/train_CRG_light_x2.yml
+  python basicsr/train.py -opt options/Train/train_CRG_light_x4.yml
   ```
 - The training experiment is in `experiments/`.
   
 ## Testing
 - Run the following scripts. The testing configuration is in `options/test/`.
   ```shell
-  python basicsr/train.py -opt options/Test/my_test_CoRPLE_light_x2.yml
-  python basicsr/train.py -opt options/Test/my_test_CoRPLE_light_x4.yml
+  python basicsr/train.py -opt options/Test/my_test_CRG_light_x2.yml
+  python basicsr/train.py -opt options/Test/my_test_CRG_light_x4.yml
   ```
 - The output is in `results/`.
 
 ## Acknowledgements
 
-This code is built on  [DAT](https://github.com/zhengchen1999/DAT.git) and [Contourlet-CNN
-](https://github.com/xKHUNx/Contourlet-CNN).
+This code is built on  [DAT](https://github.com/zhengchen1999/DAT.git), [Contourlet-CNN
+](https://github.com/xKHUNx/Contourlet-CNN), and [FasterViT](https://github.com/NVlabs/FasterViT).
 
 ## Citation
 
 If this work has been helpful to you, please feel free to cite our paper!
 
 ```
-@inproceedings{li2024contourlet,
-  title={Contourlet residual for prompt learning enhanced infrared image super-resolution},
-  author={Li, Xingyuan and Liu, Jinyuan and Chen, Zhixin and Zou, Yang and Ma, Long and Fan, Xin and Liu, Risheng},
-  booktitle={European Conference on Computer Vision},
-  pages={270--288},
-  year={2024},
-  organization={Springer}
+@article{zou2024contourlet,
+  title={Contourlet Refinement Gate Framework for Thermal Spectrum Distribution Regularized Infrared Image Super-Resolution},
+  author={Zou, Yang and Chen, Zhixin and Zhang, Zhipeng and Li, Xingyuan and Ma, Long and Liu, Jinyuan and Wang, Peng and Zhang, Yanning},
+  journal={arXiv preprint arXiv:2411.12530},
+  year={2024}
 }
 ```

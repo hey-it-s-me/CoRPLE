@@ -1,0 +1,110 @@
+# general settings
+name: train_CRG_light_x4
+model_type: DATModel
+scale: 4
+num_gpu: auto
+manual_seed: 10
+
+# dataset and data loader settings
+datasets:
+  train:
+    task: SR
+    name: DF2K
+    type: PairedImageDataset
+    dataroot_gt: datasets/benchmark/m3fd_fusion/M3FDtrain/ir
+    dataroot_lq: datasets/benchmark/m3fd_fusion/M3FDtrain/ir_4X
+    filename_tmpl: '{}x4'
+    io_backend:
+      type: disk
+
+    gt_size: 256
+    use_hflip: true
+    use_rot: true
+
+    # data loader
+    use_shuffle: True
+    num_worker_per_gpu: 12
+    batch_size_per_gpu: 8
+    dataset_enlarge_ratio: 1
+    prefetch_mode: ~
+
+  val:
+    task: SR
+    name: m3fdset20
+    type: PairedImageDataset
+    dataroot_gt: datasets/benchmark/m3fd_fusion/M3FDval/ir
+    dataroot_lq: datasets/benchmark/m3fd_fusion/M3FDval/ir_4X
+    filename_tmpl: '{}x4'
+    io_backend:
+      type: disk
+
+
+# network structures
+network_g:
+  type: DAT
+  upscale: 4
+  in_chans: 3
+  img_size: 64
+  img_range: 1.
+  depth: [18]
+  embed_dim: 60
+  num_heads: [6]
+  expansion_factor: 2
+  resi_connection: '3conv'
+  split_size: [8,32]
+  upsampler: 'pixelshuffledirect'
+
+# path
+path:
+  pretrain_network_g: ~
+  strict_load_g: False
+  resume_state: ~
+
+# training settings
+train:
+  optim_g:
+    type: Adam
+    lr: !!float 2e-4
+    weight_decay: 0
+    betas: [0.9, 0.99]
+
+  scheduler:
+    type: MultiStepLR
+    milestones: [250000, 400000, 450000, 475000]
+    gamma: 0.5
+
+  total_iter: 500000
+  warmup_iter: -1  # no warm up
+
+  # losses
+  pixel_opt:
+    type: L1Loss
+    loss_weight: 1.0
+    reduction: mean
+  prompt_opt:
+    type: L_clip
+
+# validation settings
+val:
+  val_freq: !!float 5e3
+  save_img: False
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 4
+      test_y_channel: True
+
+# logging settings
+logger:
+  print_freq: 200
+  save_checkpoint_freq: !!float 5e3
+  use_tb_logger: True
+  wandb:
+    project: ~
+    resume_id: ~
+
+# dist training settings
+dist_params:
+  backend: nccl
+  port: 29500
