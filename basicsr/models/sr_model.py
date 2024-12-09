@@ -10,6 +10,26 @@ from basicsr.utils import get_root_logger, imwrite, tensor2img
 from basicsr.utils.registry import MODEL_REGISTRY
 from .base_model import BaseModel
 
+def  log_spectrum_loss(hr_image, sr_image):
+    # 计算HR和SR图像的傅里叶变换
+    hr_fft = torch.fft.fft2(hr_image)
+    sr_fft = torch.fft.fft2(sr_image)
+
+    # 移动零频分量到中心
+    hr_fft_shifted = torch.fft.fftshift(hr_fft)
+    sr_fft_shifted = torch.fft.fftshift(sr_fft)
+
+    # 计算频谱幅值并取对数
+    hr_magnitude_spectrum = torch.log1p(torch.abs(hr_fft_shifted))
+    sr_magnitude_spectrum = torch.log1p(torch.abs(sr_fft_shifted))
+
+    # 标准化频谱幅值
+    hr_magnitude_spectrum = (hr_magnitude_spectrum - hr_magnitude_spectrum.mean()) / hr_magnitude_spectrum.std()
+    sr_magnitude_spectrum = (sr_magnitude_spectrum - sr_magnitude_spectrum.mean()) / sr_magnitude_spectrum.std()
+
+    # 计算频谱损失
+    loss = F.mse_loss(hr_magnitude_spectrum, sr_magnitude_spectrum)
+    return loss
 
 @MODEL_REGISTRY.register()
 class SRModel(BaseModel):
@@ -119,6 +139,10 @@ class SRModel(BaseModel):
             l_prompt = self.cri_prompt(self.output, self.gt, [1.0,1.0,1.0,1.0,0.5])
             l_total += l_prompt
             loss_dict['l_prompt'] = l_prompt
+
+        # log spectrum loss
+        ls_loss = log_spectrum_loss(self.gt, self.output)
+        l_total += 0.1 * ls_loss
 
         l_total.backward()
         self.optimizer_g.step()
