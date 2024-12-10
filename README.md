@@ -27,7 +27,7 @@ Download our datasets of infrared image super-resolution with segmentation label
 - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
 
 ```bash
-# Clone the github repo and go to the default directory 'CoRPLE'.
+# Clone the GitHub repo and go to the default directory 'CoRPLE'.
 git clone https://github.com/hey-it-s-me/CoRPLE.git
 conda create -n CoRPLE python=3.8
 conda activate CoRPLE
